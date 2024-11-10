@@ -97,7 +97,7 @@ export default function Home() {
         </a>
       </footer>
 
-      {/* test commit */}
+      {/* test commit to branch dev/suneth*/}
 
     </div>
   );
