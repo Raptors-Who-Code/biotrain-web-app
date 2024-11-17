@@ -1,0 +1,96 @@
+/*  Card  */
+
+.cardcontainer {
+    background-color: #D9D9D9;
+    margin: 15px 15px 15px 15px;
+    padding: 10px 10px 10px 10px;
+    
+    /*
+    
+    width: 1413px;
+    height: 151px;
+    flex-shrink: 0;
+    
+    */ 
+  }
+
+  .cardHeader {
+    color: #6B6B6B;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding-left: 24px;
+    padding-right: 36px;
+  }
+
+  .cardBody {
+    color: #000;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding-left: 24px;
+    padding-right: 36px;
+  }
+
+  /*    btn     */
+
+  .btn {
+    width: 149px;
+    height: 53px;
+    flex-shrink: 0;
+    border-radius: 7px;
+    background: #51237F;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn:hover {
+    cursor: pointer;
+  }
+
+  .btnText {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .btnP {
+    color: #000;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+  /* Grid */
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr; 
+      grid-template-rows: auto; 
+    }
+  }
