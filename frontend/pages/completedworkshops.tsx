@@ -22,8 +22,8 @@ const CompletedWorkshopsPage = () => {
       </div>*/}
 
       <div className="button-container">
-        <button className="btn">View Soft Skills Workshops</button>
-        <button className="btn">View Technical Skills Workshops</button>
+        <button className="btn">Yes</button>
+        <button className="btn">No</button>
       </div>
     </div>
   );

@@ -61,9 +61,14 @@
     transition: background-color 0.3s ease;
 }
 
+.btn:click {
+    background-color: #7e52a5;
+}
+
 .btn:hover {
     background-color: #3e1e5a;
 }
+
 
 .button-container{
     display: flex;
