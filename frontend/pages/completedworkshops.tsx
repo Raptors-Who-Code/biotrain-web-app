@@ -1,6 +1,6 @@
 // pages/completedworkshops.tsx
 import React from 'react';
-import '../styles/goalsPage.css';
+import '../styles/completedworkshops.css';
 import Image from 'next/image';
 import bioTrainLogo from '../public/biotrainlogo.png';
 
