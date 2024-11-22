@@ -1,25 +1,28 @@
-.p1{
-    height:15vh;
-    width:50vh;
+.p1 {
+    height: auto;
+    width: 100%;
+    font-size: 1rem;
+    word-wrap: break-word;
 }
 
 h2{
     color: #6B6B6B;
+    font-size: 1.25rem;
 }
 
-.header{
-    display:flex;
-    justify-content:center;
+.header {
+    display: flex;
+    justify-content: center;
     align-items: center;
     margin: auto;
-    top: 500px;
-
     color: #6B6B6B;
-    font-family: "Poppins",sans-serif ;
-
+    font-family: "Poppins", sans-serif;
     background-color: #dcdada;
-    width: 1413px;
+    width: 100%;
+    max-width: 1413px;
     height: 151px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .box-container{
@@ -31,34 +34,34 @@ h2{
     font-family: "Poppins",sans-serif ;
 }
 
-.box1{
+.box1, .box2 {
     background-color: #dcdada;
-
-    width: 460px;
-    height: 182px;
+    width: calc(50% - 20px);
+    max-width: 460px;
+    min-width: 300px;
+    height: auto;
     padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-.box2{
-    background-color: #dcdada;
-
-    width: 466px;
-    height: 182px;
-    padding: 15px;
-
-}
-
-.btn{
+.btn {
     width: 149px;
     height: 53px;
-
     background: #51237F;
-    font-family: "Poppins",sans-serif ;
-    color:white;
+    font-family: "Poppins", sans-serif;
+    color: white;
     font-size: 20px;
-
     border-radius: 10px;
-    border:none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3e1e5a;
 }
 
 .button-container{
