@@ -61,9 +61,6 @@
     transition: background-color 0.3s ease;
 }
 
-.btn:click {
-    background-color: #7e52a5;
-}
 
 .btn:hover {
     background-color: #3e1e5a;
@@ -78,3 +75,35 @@
     gap:30%;
 
 }
+
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between each checkbox item */
+    margin-top: 6%;
+}
+
+.checkbox-list label {
+    font-family: "Poppins", sans-serif;
+    color: #6B6B6B; /* Text color */
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    gap: 10px; /* Space between the checkbox and label text */
+    padding: 10px;
+    background-color: #dcdada; /* Light background for each box */
+    width: 25%; /* Make sure the label stretches to full width */
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.checkbox-list label:hover {
+    background-color: #d1d1d1; /* Darker background on hover */
+}
+
+.checkbox-list input {
+    width: 20px; /* Adjust the size of checkboxes */
+    height: 20px;
+}
+
