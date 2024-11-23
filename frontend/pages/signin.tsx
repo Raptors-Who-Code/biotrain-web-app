@@ -1,5 +1,5 @@
 import React from "react";
-import "./SignInPage.css"; 
+import "../styles/SignInPage.css";
 
 const ReturningOrNewPage = () => {
   return (
