@@ -23,7 +23,7 @@ const CompletedSelectionPage: React.FC = () => {
         </label>
       </div>
 
-      <div>
+      <div className="button-container">
         <Link href="/completedworkshops">
           <button className="btn">Back</button>
         </Link>
