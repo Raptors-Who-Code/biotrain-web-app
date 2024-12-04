@@ -21,6 +21,7 @@ const CompletedSelectionPage: React.FC = () => {
         <label>
           <input type="checkbox" name="workshops" value="option3" /> Bioprocessing 3
         </label>
+
       </div>
 
       <div className="button-container">
