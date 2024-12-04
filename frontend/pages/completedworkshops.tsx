@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import '../styles/completedworkshops.css';
 import Image from 'next/image';
+import Link from 'next/link';
 import bioTrainLogo from '../public/biotrainlogo.png';
 
 const CompletedWorkshopsPage = () => {
@@ -22,19 +23,15 @@ const CompletedWorkshopsPage = () => {
       <Image src={bioTrainLogo} alt="Bio train Logo" width={339} height={141} />
       <h1 className="header">Have you completed any workshops previously?</h1>
 
-      <div className="button-container">
-        <button className="btn" onClick={handleYesClick}>Yes</button>
-        <button className="btn" onClick={handleNoClick}>No</button>
+      <div>
+        <Link href="/goals">
+          <button className="btn">No</button>
+        </Link>
+        <Link href="/completedselection">
+          <button className="btn">Yes</button>
+        </Link>
       </div>
 
-      {showDropdown && ( 
-        
-          <div className="checkbox-list">
-            <label> <input type="checkbox" name="workshops" value="option1" /> Bioprocessing 1</label>
-            <label> <input type="checkbox" name="workshops" value="option2" />Bioprocessing 2</label>
-            <label><input type="checkbox" name="workshops" value="option3" />Bioprocessing 3</label>
-          </div>
-      )}
     </div>
   );
 };

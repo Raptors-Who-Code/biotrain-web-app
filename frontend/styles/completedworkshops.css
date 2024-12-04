@@ -79,31 +79,31 @@
 .checkbox-list {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Space between each checkbox item */
+    gap: 15px;
     margin-top: 6%;
 }
 
 .checkbox-list label {
     font-family: "Poppins", sans-serif;
-    color: #6B6B6B; /* Text color */
+    color: #6B6B6B;
     font-size: 16px;
     display: flex;
     align-items: center;
     margin: auto;
-    gap: 10px; /* Space between the checkbox and label text */
+    gap: 10px;
     padding: 10px;
-    background-color: #dcdada; /* Light background for each box */
-    width: 25%; /* Make sure the label stretches to full width */
+    background-color: #dcdada;
+    width: 25%;
     cursor: pointer;
     transition: background-color 0.3s ease; 
 }
 
 .checkbox-list label:hover {
-    background-color: #d1d1d1; /* Darker background on hover */
+    background-color: #d1d1d1;
 }
 
 .checkbox-list input {
-    width: 20px; /* Adjust the size of checkboxes */
+    width: 20px;
     height: 20px;
 }
 

@@ -27,6 +27,9 @@ const CompletedSelectionPage: React.FC = () => {
         <Link href="/completedworkshops">
           <button className="btn">Back</button>
         </Link>
+
+        <button className="btn">Next</button>
+
       </div>
     </div>
   );
