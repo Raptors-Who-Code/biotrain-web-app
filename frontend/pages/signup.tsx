@@ -63,6 +63,10 @@ const SignUpPage = () => {
           {error && <p className="error-message">{error}</p>}
           <button type="submit" className="signup-button">Sign Up</button>
         </form>
+        <p className="signin-text">
+          Already have an account?{" "}
+          <a href="/signin" className="signin-link">Sign in</a>
+        </p>
       </div>
     </div>
   );
