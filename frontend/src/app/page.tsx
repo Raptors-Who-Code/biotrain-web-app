@@ -1,4 +1,5 @@
 import Image from "next/image";
+import '../../styles/globals.css'
 
 export default function Home() {
   return (
@@ -96,6 +97,9 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
+
+      {/* test commit to branch dev/suneth*/}
+
     </div>
   );
 }
