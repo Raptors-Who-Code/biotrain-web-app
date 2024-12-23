@@ -9,11 +9,11 @@ function Grid() {
 <Fragment>
 
 <div className= {styles.cardcontainer}>
-<h1 className = {styles.cardHeader}>Welcome to BioTrain</h1>
+  <h1 className = {styles.cardHeader}>Welcome to BioTrain</h1>
 
-<p className={styles.cardBody}>
-  BioTrain is a free program funded by an EARN grant from MD Department of Labor provides a boost to both employees(existing and potential) and employers. The program offers lectures, workshops, and hands-on training for technical and soft skills for upskilling and reskilling the biotech workforce. 
-</p>
+  <p className={styles.cardBody}>
+    BioTrain is a free program funded by an EARN grant from MD Department of Labor provides a boost to both employees(existing and potential) and employers. The program offers lectures, workshops, and hands-on training for technical and soft skills for upskilling and reskilling the biotech workforce. 
+  </p>
 </div>
 
 
@@ -67,7 +67,6 @@ function Grid() {
 
 
 </div>
-
 </Fragment>
   );
 }

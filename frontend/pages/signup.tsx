@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../src/app/firebaseConfig";
 import "../styles/SignUpPage.css";
+import Link from 'next/link';
 
 const SignUpPage = () => {
   const [email, setEmail] = useState("");
@@ -23,11 +24,13 @@ const SignUpPage = () => {
   return (
     <div className="signup-container">
       <div className="signup-logo">
-        <img
-          src="./biotrainlogo.png"
-          alt="Montgomery College Logo"
-          className="signup-logo-img"
-        />
+        <Link href="/landing">
+          <img
+            src="./biotrainlogo.png"
+            alt="Montgomery College Logo"
+            className="signup-logo-img"
+          />
+        </Link>
       </div>
 
       <div className="signup-form-container">

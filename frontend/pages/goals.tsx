@@ -2,12 +2,22 @@ import React from 'react';
 import '../styles/goalsPage.css';
 import Image from 'next/image';
 import bioTrainLogo from '../public/biotrainlogo.png';
+import Link from 'next/link';
+import styles from './../styles/landing.module.css';
 
 const GoalsPage = () => {
   return (
-
+    <div className={styles.pageContent}>
       <div className="container">
-          <Image src = {bioTrainLogo} alt ="Bio train Logo" width = {339} height = {141}/>
+          <div className={styles.logo}>
+            <Link href="/landing">
+              <img
+                src="./biotrainlogo.png"
+                alt="Montgomery College Logo"
+                className={styles.logoImg}
+              />
+            </Link>
+          </div>
           <h1 className = "header">Are you looking to gain soft skills or industry/technical skills?</h1>
           <div className = "box-container">
               <div className = 'box1'>
@@ -27,13 +37,27 @@ const GoalsPage = () => {
           </div>
 
           <div className = "button-container">
+            <Link href="/soft-skills-workshops">
               <button className="btn">Soft Skills</button>
+            </Link>
+            <Link href="/technical-skills-workshops">
               <button className="btn">Industry Skills</button>
+            </Link>
           </div>
 
-
-
+        {/* AI-Recommended Workshops Section */}
+        <div className="ai-section">
+            <p className="ai-description">
+                Not sure where to start? Let AI recommend workshops tailored to your interests and career goals.
+            </p>
+            <div className="ai-button-container">
+                <Link href="/interests">
+                    <button className="btn btn-ai">Choose for me</button>
+                </Link>
+            </div>
+        </div>
       </div>
+    </div>
   );
 };
 

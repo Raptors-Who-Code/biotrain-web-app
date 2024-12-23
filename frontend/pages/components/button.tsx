@@ -9,7 +9,7 @@ function Button() {
         <Fragment>
 
         <p className={styles.btnP}>Ready to find your path and progress in your career?</p>
-        <Link href="/signin">
+        <Link href="/returning-or-new">
             <button className={styles.btn}>
                 <p className={styles.btnText}>Get Started</p>
             </button>

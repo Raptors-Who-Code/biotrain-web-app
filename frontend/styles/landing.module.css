@@ -1,5 +1,14 @@
-/*  Card  */
+.pageContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
 
+/*  Card  */
 .cardcontainer {
     background-color: #D9D9D9;
     margin: 15px 15px 15px 15px;
@@ -94,3 +103,70 @@
       grid-template-rows: auto; 
     }
   }
+  
+/* Decision Section */
+/*
+.decision-container {
+  text-align: center;
+  margin-top: 20px;
+}
+*/
+
+.decisionTitle {
+  font-family: Poppins;
+  font-size: 24px;
+  color: #6B6B6B;
+  margin-bottom: 20px;
+}
+
+.decisionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.decisionButton {
+  text-decoration: none;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background-color: #51237F;
+  padding: 10px 20px;
+  border-radius: 7px;
+  transition: background-color 0.3s;
+}
+
+.decisionButton:hover {
+  background-color: #6A479F;
+  cursor: pointer;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.logoImg {
+  height: 60px;
+}
+
+.logo-text {
+  margin: 5px 0 0;
+  font-size: 16px;
+  color: #555;
+  font-weight: 400;
+}
+
+.getStartedBtn {
+  background-color: #6A1B9A;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+}

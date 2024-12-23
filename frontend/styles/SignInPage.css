@@ -1,2 +1,95 @@
+.signin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  .signin-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .signin-logo-img {
+    height: 60px;
+  }
+  
+  .signin-logo-text {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #555;
+    font-weight: 400;
+  }
+  
 
+  .signin-form-container {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .signin-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .signin-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+
+  .signin-button {
+    background-color: #6A1B9A;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .signin-text {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .signin-link {
+    color: #6A1B9A;
+    text-decoration: none;
+  }
+ 
+ 
+ /***** css for firbase error ******/
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+
+  
   
