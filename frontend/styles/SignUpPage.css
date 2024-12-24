@@ -82,4 +82,14 @@
     color: #6A1B9A;
     text-decoration: none;
   }
+ 
+ 
+ /***** css for firbase error ******/
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+
+  
   

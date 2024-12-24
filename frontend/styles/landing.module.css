@@ -1,5 +1,14 @@
-/*  Card  */
+.pageContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
 
+/*  Card  */
 .cardcontainer {
     background-color: #D9D9D9;
     margin: 1rem;
@@ -100,4 +109,3 @@
       grid-template-rows: auto; 
     }
   }
-

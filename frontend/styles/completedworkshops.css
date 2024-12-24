@@ -5,7 +5,7 @@
     word-wrap: break-word;
 }
 
-h2{
+.h2{
     color: #6B6B6B;
     font-size: 1.25rem;
 }
@@ -15,6 +15,7 @@ h2{
     justify-content: center;
     align-items: center;
     margin: auto;
+    margin-top: 5%;
     color: #6B6B6B;
     font-family: "Poppins", sans-serif;
     background-color: #dcdada;
@@ -60,50 +61,49 @@ h2{
     transition: background-color 0.3s ease;
 }
 
+
 .btn:hover {
     background-color: #3e1e5a;
 }
+
 
 .button-container{
     display: flex;
     justify-content: center;
     position: relative;
     top:75px;
-    gap:765px;
+    gap:30%;
 
 }
 
-/* AI Section Description */
-.ai-description {
-    padding-top: 80px;
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    font-size: 1rem;
-    color: #6B6B6B;
-    margin: 20px auto;
-    max-width: 600px;
-}
-
-.ai-button-container {
+.checkbox-list {
     display: flex;
-    justify-content: center;
-    position: relative;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 2%;
 }
 
-/* AI Button Styling (inherits from .btn) */
-.btn-ai {
-    width: 210px;
-    height: 60px;
-    background: #51237F;
+.checkbox-list label {
     font-family: "Poppins", sans-serif;
-    color: white;
-    font-size: 20px;
-    border-radius: 10px;
-    border: none;
+    color: #6B6B6B;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    gap: 10px;
+    padding: 10px;
+    background-color: #dcdada;
+    width: 25%;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; 
 }
 
-.btn-ai:hover {
-    background-color: #3e1e5a;
+.checkbox-list label:hover {
+    background-color: #d1d1d1;
 }
+
+.checkbox-list input {
+    width: 20px;
+    height: 20px;
+}
+
