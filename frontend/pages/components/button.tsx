@@ -13,6 +13,7 @@ function Button() {
         <button className={styles.btn}>
             <p className={styles.btnText}>Get Started</p>
         </button>
+        </div>
 
 
         </Fragment>
