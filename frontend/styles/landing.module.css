@@ -159,6 +159,13 @@
   font-weight: 400;
 }
 
+@media screen and (max-width: 768px){
+  .logo {
+    position: static;
+  }
+}
+
+
 .getStartedBtn {
   background-color: #6A1B9A;
   color: #fff;

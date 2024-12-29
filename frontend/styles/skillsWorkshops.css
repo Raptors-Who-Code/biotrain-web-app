@@ -25,7 +25,22 @@ h2{
     box-sizing: border-box;
 }
 
-.box-container{
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: #6B6B6B;
+    font-family: "Poppins", sans-serif;
+    background-color: #dcdada;
+    width: 100%;
+    max-width: 1413px;
+    height: 100px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.boxBtn-container{
     display: flex;
     justify-content: center;
     position: relative;
@@ -34,7 +49,7 @@ h2{
     font-family: "Poppins",sans-serif ;
 }
 
-.box1, .box2 {
+.boxBtn1, .boxBtn2 {
     background-color: #dcdada;
     width: calc(50% - 20px);
     max-width: 460px;
@@ -45,6 +60,29 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
+}
+
+.boxBtn{
+    background-color: #dcdada;
+    max-width: 460px;
+    min-width: 300px;
+    height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boxBtn1 h2, .boxBtn2 h2 {
+     text-align: center;
+     color: #6B6B6B;
+     font-size: 1.25rem;
+}
+
+.boxBtn:hover {
+    background-color: #3e1e5a;
 }
 
 .btn {
@@ -115,12 +153,12 @@ h2{
         flex-direction: column;
         gap: 20px;
     }
-    .box-container {
+    .boxBtn-container {
         flex-direction: column;
         gap: 20px;
     }
 
-    .box1, .box2 {
+    .boxBtn1, .boxBtn2 {
         width: 100%;
         max-width: none;
     }
@@ -131,14 +169,19 @@ h2{
     }
 
     .header, .body {
-        font-size: 1rem;
+
+        font-size: .9rem;
         padding: 10px;
         text-align: center;
+    }
+    .body{
+            height:160px;
     }
 
     .p1 {
         font-size: 0.9rem;
     }
+
 
 
 }
