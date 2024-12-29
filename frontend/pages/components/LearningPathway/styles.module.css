@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+
+.treeContainer {
+    position: relative;
+    flex-grow: 1;
+    min-height: 600px;
+    width: 100%;
+    background-color: #fafafa; /* gray bg */
+}
+
+.treeWrapper {
+    position: absolute;
+    inset: 0;
+}
+
+.loadingContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.detailsContainer {
+    border-top: 1px solid #e5e7eb;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+}

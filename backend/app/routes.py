@@ -7,7 +7,7 @@ main = Blueprint('main', __name__)
 def assess():
     # Placeholder code for handling assessment data and returning recommendations
     data = request.get_json()
-    return jsonify({"message": "Assessment recieved"})
+    return jsonify({"message": "Assessment received"})
 
 
 # Endpoint for adding a user - these are added just for testing the database connection
@@ -60,6 +60,71 @@ def add_user():
 def add_completed_workshops():
     data = request.json
 
+    if isinstance(data, list): # If data is a list, process each workshop in the list
+        added_workshops = []
+        for workshop_data in data:
+            name = workshop_data.get('name')
+            kind = workshop_data.get('kind')
+            description = workshop_data.get('description')
+
+            if name and kind and description:
+                new_course = Workshop(
+                    name=name,
+                    kind=kind,
+                    description=description
+                )
+                db.session.add(new_course)
+                added_workshops.append({
+                    "name": new_course.name,
+                    "kind": new_course.kind,
+                    "description": new_course.description
+                })
+            else:
+                return jsonify({
+                    "message": "Missing required fields"
+                }), 400
+        
+        db.session.commit()
+
+        return jsonify({
+            "message": "Completed workshops added successfully",
+            "new_workshops": added_workshops
+        }), 201
+    
+    elif isinstance(data, dict): # If data is a dictionary, process a single workshop
+        name = data.get('name')
+        kind = data.get('kind')
+        description = data.get('description')
+
+        if name and kind and description:
+            new_course = Workshop(
+                name=name,
+                kind=kind,
+                description=description
+            )
+            db.session.add(new_course)
+            db.session.commit()
+
+            return jsonify({
+                "message": "Completed workshop added successfully",
+                "new_workshop": {
+                    "name": new_course.name,
+                    "kind": new_course.kind,
+                    "description": new_course.description
+                }
+            }), 201
+        
+        else:
+            return jsonify({
+                "message": "Missing required fields"
+            }), 400
+        
+    else:
+        return jsonify({
+            "message": "Invalid data format"
+        }), 400
+    
+    """
     name = data.get('name')
     kind = data.get('kind')
     desc = data.get('description')
@@ -81,5 +146,18 @@ def add_completed_workshops():
             "description":  new_course.description
         }
     }), 201
+    """
 
 
+@main.route('/api/workshops', methods=['GET'])
+def get_workshops():
+    try:
+        workshops = Workshop.query.all()
+        if not workshops:
+            return jsonify([])
+        result = [{"name": workshop.name, "kind": workshop.kind, "description": workshop.description} for workshop in workshops]
+        print("Workshops:", result)
+        return jsonify(result)
+    except Exception as e:
+        print("Error fetching workshops:", e)
+        return jsonify([])

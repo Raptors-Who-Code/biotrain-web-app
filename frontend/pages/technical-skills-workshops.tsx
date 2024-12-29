@@ -34,7 +34,7 @@ const TechnicalSkillsWorkshopsPage = () => {
                         it is taught by industry experts with decades of experience in Quality and Regulatory
                         Compliance.
                     </h3>
-                    <p1> The course curriculum covers a comprehensive range of topics including introduction to quality
+                    <p> The course curriculum covers a comprehensive range of topics including introduction to quality
                         concepts, levels of compliance and difference (i.e. GLP, GMP, GCP),
                         Data integrity principles and practices, Organizational structure and quality management,
                         document control and Standard Operating Procedures (SOPs),
@@ -42,12 +42,12 @@ const TechnicalSkillsWorkshopsPage = () => {
                         qualification and selection,
                         ISO 9001 quality management system, audit management and
                         improvement strategies, risk management and mitigation techniques.
-                    </p1>
+                    </p>
 
                 </button>
                 <button className="boxBtn2">
                     <h2>Molecule to Market Place: Regulatory Consideration (Starts 10/28/23)</h2>
-                    <p1> The regulatory guidance and pathways for the development and marketing approval of medicinal
+                    <p> The regulatory guidance and pathways for the development and marketing approval of medicinal
                         drugs, considering research, clinical trials,
                         and process development are the backbone of bringing innovation to market. This program is ideal
                         for basic research and translational biology scientists.
@@ -58,14 +58,14 @@ const TechnicalSkillsWorkshopsPage = () => {
                         The information about regulatory aspects and considerations for Chemistry, Manufacturing, and
                         Controls (CMC) of drug development allows scientists to familiarize themselves with clinical,
                         regulatory, and quality considerations and practices. <b>5-hours.</b>
-                    </p1>
+                    </p>
                 </button>
             </div>
 
             <div className="boxBtn-container">
                 <button className="boxBtn1">
                     <h2>Supply Chain Dynamics (Starts 11/18/23)</h2>
-                    <p1> This course provides a comprehensive overview of the principles of acquiring various materials
+                    <p> This course provides a comprehensive overview of the principles of acquiring various materials
                         for biotechnology as well as
                         focused presentations relating to best practices for commodity-specific acquisitions for
                         Research and Development,
@@ -73,55 +73,55 @@ const TechnicalSkillsWorkshopsPage = () => {
                         Good Manufacturing Practices (cGMP).
                         This training will focus on strategic purchasing, the power of leverage,negotiations, contracts,
                         and agreements. <b>6-hours.</b>
-                    </p1>
+                    </p>
                 </button>
                 <button className="boxBtn2">
                     <h2>Drug Development</h2>
-                    <p1> revised course description coming soon</p1>
+                    <p> revised course description coming soon</p>
                 </button>
             </div>
 
             <div className="boxBtn-container">
                 <button className="boxBtn1">
                     <h2>Biotech Warehouse Logistics</h2>
-                    <p1> revised course description coming soon</p1>
+                    <p> revised course description coming soon</p>
                 </button>
                 <button className="boxBtn2">
                     <h2>Lab Essentials: NGS Technician</h2>
-                    <p1> revised course description coming soon
-                    </p1>
+                    <p> revised course description coming soon
+                    </p>
                 </button>
             </div>
 
             <div className="boxBtn-container">
                 <button className="boxBtn1">
                     <h2>Customized Bio-manufacturing</h2>
-                    <p1> revised course description coming soon
-                    </p1>
+                    <p> revised course description coming soon
+                    </p>
                 </button>
                 <button className="boxBtn2">
                     <h2>Raw Material Testing BioPharma</h2>
-                    <p1> revised course description coming soon
-                    </p1>
+                    <p> revised course description coming soon
+                    </p>
                 </button>
             </div>
             <div className="boxBtn-container">
                 <button className="boxBtn1">
                     <h2>Quality Control in Biotechnology</h2>
-                    <p1>revised course description coming soon
-                    </p1>
+                    <p>revised course description coming soon
+                    </p>
                 </button>
                 <button className="boxBtn2">
                     <h2>Operating in Regulated Environment</h2>
-                    <p1> revised course description coming soon.
-                    </p1>
+                    <p> revised course description coming soon.
+                    </p>
                 </button>
             </div>
             <div className ="button-container">
             <button className="boxBtn">
                 <h2>Bio-processing Monitoring and Impurities Testing</h2>
-                <p1> revised course description coming soon.
-                </p1>
+                <p> revised course description coming soon.
+                </p>
             </button>
             </div>
 
