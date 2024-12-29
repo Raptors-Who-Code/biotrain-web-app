@@ -5,7 +5,7 @@ import bioTrainLogo from '../public/biotrainlogo.png';
 import Link from 'next/link';
 import styles from './../styles/landing.module.css';
 
-const SoftSkillsWorkshopsPage = () => {
+const TechnicalSkillsWorkshopsPage = () => {
   return (
     <div className={styles.pageContent}>
         <div className="container">
@@ -84,8 +84,7 @@ const SoftSkillsWorkshopsPage = () => {
             <div className="boxBtn-container">
                 <button className="boxBtn1">
                     <h2>Biotech Warehouse Logistics</h2>
-                    <p1> revised course description coming soon
-                    </p1>
+                    <p1> revised course description coming soon</p1>
                 </button>
                 <button className="boxBtn2">
                     <h2>Lab Essentials: NGS Technician</h2>
@@ -137,4 +136,4 @@ const SoftSkillsWorkshopsPage = () => {
   );
 };
 
-export default SoftSkillsWorkshopsPage;
+export default TechnicalSkillsWorkshopsPage;
