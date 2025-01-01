@@ -204,7 +204,7 @@ def get_workshops():
         return jsonify([])
     
 
-@main.route('/api/get_recommendations', methods=['GET'])
+@main.route('/api/generate_recommendations', methods=['GET'])
 async def get_recommendations():
     req = request.json
     interests = req.get("content")
@@ -275,6 +275,18 @@ async def get_recommendations():
 
         full_response += part["message"]["content"]
         # print(part["message"]["content"], end="", flush=True)
+
+    workshops = [workshop.strip() for workshop in full_response.split(",")]
+
+    # this is for testing, later get the current user and set the recommended workshops
+    user_id = 1
+    user = User.query.get(user_id)
+    if not user:
+        return jsonify({"message": "User not found"}), 404
+    
+    # store the recommended workshops for the user in the database
+    user.recommended_workshops = workshops
+    db.session.commit()
 
     return full_response
 
