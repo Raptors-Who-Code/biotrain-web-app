@@ -23,7 +23,7 @@ const LearningPathway: React.FC = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:5000/api/workshops');
+                const response = await fetch('http://127.0.0.1:5000/api/recommended-workshops');
                 const data: Workshop[] = await response.json();
                 
                 if (Array.isArray(data)) {

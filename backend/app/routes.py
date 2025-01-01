@@ -57,9 +57,72 @@ def add_user():
     }), 201
 
 
-# endpoint for adding a new workshop - just for testing
-@main.route('/completed-workshops', methods=['post'])
+# endpoint for adding a completed workshop
+@main.route('/api/add-completed-workshops', methods=['POST'])
 def add_completed_workshops():
+    data = request.json
+    # user_id = data.get('user_id')
+    user_id = 1
+    completed_workshops = data.get('completedWorkshops')
+
+    if not user_id or not completed_workshops:
+        return jsonify({"message": "Missing required fields"}), 400
+
+    user = User.query.get(user_id)
+    if not user:
+        return jsonify({"message": "User not found"}), 404
+    
+    if user.completed_workshops:
+        user.completed_workshops.extend([workshop for workshop in completed_workshops if workshop not in user.completed_workshops])
+    else:
+        user.completed_workshops = completed_workshops
+    db.session.commit()
+
+    return jsonify({
+        "message": "Completed workshops added successfully",
+        "user": {
+            "id": user.id,
+            "username": user.username,
+            "email": user.email,
+            "completed_workshops": user.completed_workshops,
+            "recommended_workshops": user.recommended_workshops
+        }
+    }), 201
+
+# Route for future implementation of adding recommended workshops
+"""
+@main.route('/api/add-recommended-workshops', methods=['POST'])
+def add_recommended_workshops():
+    data = request.json
+    # user_id = data.get('user_id')
+    user_id = 1
+    recommended_workshops = data.get('recommendedWorkshops')
+
+    if not user_id or not recommended_workshops:
+        return jsonify({"message": "Missing required fields"}), 400
+
+    user = User.query.get(user_id)
+    if not user:
+        return jsonify({"message": "User not found"}), 404
+
+    user.recommended_workshops = [workshop for workshop in recommended_workshops if workshop not in user.recommended_workshops]
+    db.session.commit()
+
+    return jsonify({
+        "message": "Recommended workshops added successfully",
+        "user": {
+            "id": user.id,
+            "username": user.username,
+            "email": user.email,
+            "completed_workshops": user.completed_workshops,
+            "recommended_workshops": user.recommended_workshops
+        }
+    }), 201
+"""
+
+# endpoint for adding new workshops
+@main.route('/api/add-workshops', methods=['POST'])
+def add_new_workshops():
     data = request.json
 
     if isinstance(data, list): # If data is a list, process each workshop in the list
@@ -125,32 +188,8 @@ def add_completed_workshops():
         return jsonify({
             "message": "Invalid data format"
         }), 400
-    
-    """
-    name = data.get('name')
-    kind = data.get('kind')
-    desc = data.get('description')
 
-    new_course = Workshop(
-        name = name,
-        kind = kind,
-        description= desc
-    )
-
-    db.session.add(new_course)
-    db.session.commit()
-
-    return jsonify( {
-        "message": "completed workshop added successfully",
-        "new_workshop": {
-            "name":  new_course.name,
-            "kind":  new_course.kind,
-            "description":  new_course.description
-        }
-    }), 201
-    """
-
-
+# endpoint for getting all workshops
 @main.route('/api/workshops', methods=['GET'])
 def get_workshops():
     try:
@@ -239,3 +278,26 @@ async def get_recommendations():
 
     return full_response
 
+
+# endpoint for getting recommended workshops
+@main.route('/api/recommended-workshops', methods=['GET'])
+def get_recommended_workshops():
+    try:
+        user_id = 1
+        user = User.query.get(user_id)
+        if not user:
+            return jsonify({"message": "User not found"}), 404
+
+        recommended_workshops = user.recommended_workshops
+        if not recommended_workshops:
+            return jsonify([])
+        
+        workshops = Workshop.query.filter(Workshop.name.in_(recommended_workshops)).all()
+
+        result = [
+            {"name": workshop.name, "kind": workshop.kind, "description": workshop.description} for workshop in workshops
+        ]
+        return jsonify(result)
+    except Exception as e:
+        print("Error fetching recommended workshops:", e)
+        return jsonify([])
