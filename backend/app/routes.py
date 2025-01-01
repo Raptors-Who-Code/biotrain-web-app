@@ -1,5 +1,7 @@
 from flask import Blueprint, request, jsonify
 from .models import User, Workshop, db
+import asyncio
+from ollama import AsyncClient
 
 main = Blueprint('main', __name__)
 
@@ -161,3 +163,79 @@ def get_workshops():
     except Exception as e:
         print("Error fetching workshops:", e)
         return jsonify([])
+    
+
+@main.route('/api/get_recommendations', methods=['GET'])
+async def get_recommendations():
+    req = request.json
+    interests = req.get("content")
+
+    # Organize workshops in dictionaries
+    workshops = {
+        "technical_skills": [
+            "Quality Control in BioTechnology Class (Starts 1/8/24)-  The course curriculum covers a comprehensive range of topics including introduction to quality concepts, levels of compliance and difference (i.e. GLP, GMP, GCP), Data integrity principles and practices, Organizational structure and quality management, document control and Standard Operating Procedures (SOPs), equipment qualification and calibration procedures, software validation processes, vendor qualification and selection, ISO 9001 quality management system, audit management and improvement strategies, risk management and mitigation techniques.",
+            "Molecule to Market Place: Regulatory Consideration (Starts 10/28/23) -  The regulatory guidance and pathways for the development and marketing approval of medicinal drugs, considering research, clinical trials, and process development are the backbone of bringing innovation to market. This program is ideal for basic research and translational biology scientists.",
+            "Supply Chain Dynamics (Starts 11/18/23) -  This course provides a comprehensive overview of the principles of acquiring various materials for biotechnology as well as focused presentations relating to best practices for commodity-specific acquisitions for Research and Development, Research Use Only Manufacturing (RUO), and U.S. Food and Drug Administration (FDA) regulated Good Manufacturing Practices (cGMP).",
+            "Drug Development",
+            "Biotech Warehouse Logistics",
+            "Lab Essentials: NGS Technician",
+            "Customized Bio-Manufacturing",
+            "Raw Materials Testing BioPharma",
+            "Operating in Regulated Environment",
+            "Bio-processing Monitoring and Impurities Testing"
+        ],
+        "soft_skills": [
+            "Claiming Your Strengths and Continuous Learning",
+            "Managing Difficult Conversations and Conflicts",
+            "Negotiations",
+            "Public Speaking and Overcoming Speaking Anxiety",
+            "Building Effective Networks",
+            "Building Resiliency and Adaptability",
+            "Communicating with Confidence",
+            "Effective Listening",
+            "Teamwork and Problem Solving",
+            "Critical Thinking and Time Management"
+        ]
+    }
+
+    technical_skills = "\n".join([f"- {course}" for course in workshops["technical_skills"]])
+    soft_skills = "\n".join([f"- {course}" for course in workshops["soft_skills"]])
+
+    # Create the message
+    content = (
+        f"The following would be the set of interests, skills, and career goals a user enters. "
+        f"Generate recommended workshops considering their interests. In your response, only list the technical skills "
+        f"and soft skill workshops that are directly relevant to the provided skills, interests, and career goals. "
+        f"Also, the generated response should just be recommended workshop names separated by commas, no additional text. "
+        f"For example, your response should just look like course1, course2.\n"
+        f"The list of interests are: {interests}\n"
+        f"These are the workshops we offer.\n"
+        f"Available technical skills workshops:\n{technical_skills}\n"
+        f"Available soft skills workshops:\n{soft_skills}"
+    )
+
+    message = {
+        "model": "llama3",
+        "messages": [
+            {
+                "role": "user",
+                "content": content
+            }
+        ],
+        "stream": False
+    }
+
+    full_response = ""
+
+    #getting the generated response from llama
+    async for part in await AsyncClient().chat(
+        model="llama3",
+        messages=message["messages"],
+        stream=True
+    ):
+
+        full_response += part["message"]["content"]
+        # print(part["message"]["content"], end="", flush=True)
+
+    return full_response
+
