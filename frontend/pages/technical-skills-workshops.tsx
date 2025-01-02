@@ -127,7 +127,7 @@ const TechnicalSkillsWorkshopsPage = () => {
 
 
             <div className="button-container">
-                <Link href="/interests">
+                <Link href="/recommended-workshops">
                     <button className="btn">Choose For Me</button>
                 </Link>
             </div>

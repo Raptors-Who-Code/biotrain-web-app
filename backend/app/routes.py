@@ -204,7 +204,7 @@ def get_workshops():
         return jsonify([])
     
 
-@main.route('/api/generate_recommendations', methods=['GET'])
+@main.route('/api/generate-recommendations', methods=['GET'])
 async def get_recommendations():
     req = request.json
     interests = req.get("content")

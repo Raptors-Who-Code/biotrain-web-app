@@ -51,7 +51,7 @@ const GoalsPage = () => {
                 Not sure where to start? Let AI recommend workshops tailored to your interests and career goals.
             </p>
             <div className="ai-button-container">
-                <Link href="/interests">
+                <Link href="/recommended-workshops">
                     <button className="btn btn-ai">Choose for me</button>
                 </Link>
             </div>
