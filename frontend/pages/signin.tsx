@@ -3,17 +3,19 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../src/app/firebaseConfig";
 import "../styles/SignInPage.css";
 import Link from 'next/link';
+import { useRouter } from "next/router";
 
 const SignInPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // Handle successful sign-in (e.g., redirect to dashboard)
+     router.push("/user-dashboard");//redriection upon successful login
     } catch (error) {
       setError((error as any).message);
     }

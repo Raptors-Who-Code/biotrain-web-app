@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../src/app/firebaseConfig";
 import "../styles/SignUpPage.css";
 import Link from 'next/link';
+import { useRouter } from "next/router";
 
 const SignUpPage = () => {
   const [email, setEmail] = useState("");
@@ -10,12 +11,23 @@ const SignUpPage = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      // Handle successful signup (e.g., redirect to another page)
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+        
+      // Set display name for user
+      await updateProfile(user, {
+        displayName: `${firstName} ${lastName}`,
+      });
+
+      console.log('User signed up and display name recorded:', user);// console log to check for sucessful signup
+     
+      // upon successful signup send user to signin page
+      router.push("/signin");
     } catch (error) {
       setError((error as any).message);
     }

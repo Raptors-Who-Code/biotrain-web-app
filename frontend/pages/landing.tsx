@@ -1,8 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import Link from 'next/link';
 import Grid from './components/grid';
-import Image from 'next/image';
-import bioTrainLogo from '../public/biotrainlogo.png';
 import styles from './../styles/landing.module.css';
 
 const LandingPage = () => {
