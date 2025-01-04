@@ -12,7 +12,7 @@
     "@firebase/auth": "^1.8.1",
     "autoprefixer": "^10.4.20",
     "firebase": "^11.0.2",
-    "next": "^15.0.3",
+    "next": "^15.1.2",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-d3-tree": "^3.6.2",
     "react-dom": "19.0.0-rc-66855b96-20241106"
