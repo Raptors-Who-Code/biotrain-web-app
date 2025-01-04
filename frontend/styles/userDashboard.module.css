@@ -1,0 +1,42 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  height: 50px; /* Bio Train logo*/
+}
+
+.accountSection {
+  display: flex;
+  align-items: center;
+}
+
+.signOutButton {
+  margin-left: 20px;
+}
+
+.pageContent {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
