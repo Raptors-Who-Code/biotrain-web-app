@@ -1,11 +1,83 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import '../styles/skillsWorkshops.css';
 import Image from 'next/image';
 import bioTrainLogo from '../public/biotrainlogo.png';
 import Link from 'next/link';
 import styles from './../styles/landing.module.css';
+import {useRouter} from "next/router";
 
-const TechnicalSkillsWorkshopsPage = () => {
+const TechnicalSkillsWorkshopsPage: React.FC = () =>  {
+
+    interface Workshop {
+        name: string;
+        kind: string;
+        description: string;
+    }
+  const [workshops, setWorkshops] = useState<Workshop[]>([]);
+  const [selectedWorkshops, setSelectedWorkshops] = useState<string[]>([]);
+  const [hasCompletedWorkshops, setHasCompletedWorkshops] = useState<boolean | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (hasCompletedWorkshops === true) {
+      const fetchWorkshops = async () => {
+        try {
+          const response = await fetch('http://127.0.0.1:5000/api/workshops');
+          const data = await response.json();
+          if (Array.isArray(data)) {
+              workshops.forEach((workshop) => {
+                  if(workshop.kind == "Industry skill")
+                      setWorkshops(data);
+              });
+          } else {
+            throw new Error('Invalid response format');
+          }
+        } catch (err) {
+          setError('Failed to load workshops');
+          console.error('Error fetching workshops:', err);
+        }
+      };
+      fetchWorkshops();
+    }
+
+    if (hasCompletedWorkshops === false) {
+      router.push('/goals');
+    }
+  }, [hasCompletedWorkshops, router]);
+
+  const handleButtonChange = (name: string) => {
+    setSelectedWorkshops((prev) =>
+      prev.includes(name) ? prev.filter((workshopName) => workshopName != name) : [...prev, name]
+    );
+  };
+
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('http://127.0.0.1:5000/api/add-completed-workshops', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ completedWorkshops: selectedWorkshops }),
+      });
+
+      if (response.ok) {
+        alert('Completed workshops added successfully!');
+        router.push('/goals');
+      } else {
+        throw new Error('Failed to submit workshops');
+      }
+    } catch (err) {
+      console.error('Error submitting workshops:', err);
+      alert('An error occurred while submitting the workshops');
+    }
+  };
+
+
+  //*WIP* for when user has not selected anything, a pop-up will show telling the user
+    //to select a workshop to continue *WIP*
+  // const popUp = () =>{
+  //
+  // }
   return (
     <div className={styles.pageContent}>
         <div className="container">
@@ -18,7 +90,7 @@ const TechnicalSkillsWorkshopsPage = () => {
                     />
                 </Link>
             </div>
-            <h1 className="header">Available Technial Skills Workshops</h1>
+            <h1 className="header">Available Technical Skills Workshops</h1>
             <h2 className="body"> Choose from topics designed to enhance industry relevant knowledge for incumbent
                 workers in biotechnology.
                 All programs are designed with biotechnology guidance and taught by industry experts.
@@ -28,22 +100,34 @@ const TechnicalSkillsWorkshopsPage = () => {
 
             <div className="boxBtn-container">
                 <button className="boxBtn1">
-                    <h2>Quality Control in BioTechnology Class (Starts 1/8/24)</h2>
-                    <h3>This comprehensive 40-hour course over 10 evenings, provides a strong foundation in quality for
-                        individuals seeking to advance their careers in the dynamic field of biotechnology.
-                        it is taught by industry experts with decades of experience in Quality and Regulatory
-                        Compliance.
-                    </h3>
-                    <p> The course curriculum covers a comprehensive range of topics including introduction to quality
-                        concepts, levels of compliance and difference (i.e. GLP, GMP, GCP),
-                        Data integrity principles and practices, Organizational structure and quality management,
-                        document control and Standard Operating Procedures (SOPs),
-                        equipment qualification and calibration procedures, software validation processes, vendor
-                        qualification and selection,
-                        ISO 9001 quality management system, audit management and
-                        improvement strategies, risk management and mitigation techniques.
-                    </p>
-
+                    {workshops.map((workshop)=> (
+                        <label key = {workshop.name}>
+                            <input
+                                type = "button"
+                                name = "workshop"
+                                value = {workshop.name}
+                                checked = {selectedWorkshops.includes(workshop.name)}
+                                onChange ={() => handleButtonChange(workshop.name)}
+                            />
+                            <h2>{workshop.name}</h2>
+                            <p>{workshop.description}</p>
+                        </label>
+                    // <h2> Quality Control in BioTechnology Class (Starts 1/8/24)</h2>
+                    // <h3>This comprehensive 40-hour course over 10 evenings, provides a strong foundation in quality for
+                    //     individuals seeking to advance their careers in the dynamic field of biotechnology.
+                    //     it is taught by industry experts with decades of experience in Quality and Regulatory
+                    //     Compliance.
+                    // </h3>
+                    // <p> The course curriculum covers a comprehensive range of topics including introduction to quality
+                    //     concepts, levels of compliance and difference (i.e. GLP, GMP, GCP),
+                    //     Data integrity principles and practices, Organizational structure and quality management,
+                    //     document control and Standard Operating Procedures (SOPs),
+                    //     equipment qualification and calibration procedures, software validation processes, vendor
+                    //     qualification and selection,
+                    //     ISO 9001 quality management system, audit management and
+                    //     improvement strategies, risk management and mitigation techniques.
+                    // </p>
+                    ))}
                 </button>
                 <button className="boxBtn2">
                     <h2>Molecule to Market Place: Regulatory Consideration (Starts 10/28/23)</h2>
@@ -130,6 +214,13 @@ const TechnicalSkillsWorkshopsPage = () => {
                 <Link href="/recommended-workshops">
                     <button className="btn">Choose For Me</button>
                 </Link>
+                <button
+                    className="btn"
+                    onClick={handleSubmit}
+                    disabled={selectedWorkshops.length == 0}
+                >
+                    Next
+                </button>
             </div>
         </div>
     </div>

@@ -1,11 +1,80 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import '../styles/skillsWorkshops.css';
 import Image from 'next/image';
 import bioTrainLogo from '../public/biotrainlogo.png';
 import Link from 'next/link';
 import styles from './../styles/landing.module.css';
+import {useRouter} from "next/router";
 
-const SoftSkillsWorkshopsPage = () => {
+const SoftSkillsWorkshopsPage: React.FC = () => {
+
+  interface Workshop {
+  name: string;
+  kind: string;
+  description: string;
+}
+const [workshops, setWorkshops] = useState<Workshop[]>([]);
+  const [selectedWorkshops, setSelectedWorkshops] = useState<string[]>([]);
+  const [hasCompletedWorkshops, setHasCompletedWorkshops] = useState<boolean | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (hasCompletedWorkshops === true) {
+      const fetchWorkshops = async () => {
+        try {
+          const response = await fetch('http://127.0.0.1:5000/api/workshops');
+          const data = await response.json();
+          if (Array.isArray(data)) {
+            setWorkshops(data);
+          } else {
+            throw new Error('Invalid response format');
+          }
+        } catch (err) {
+          setError('Failed to load workshops');
+          console.error('Error fetching workshops:', err);
+        }
+      };
+      fetchWorkshops();
+    }
+
+    if (hasCompletedWorkshops === false) {
+      router.push('/goals');
+    }
+  }, [hasCompletedWorkshops, router]);
+
+  const handleCheckboxChange = (name: string) => {
+    setSelectedWorkshops((prev) =>
+      prev.includes(name) ? prev.filter((workshopName) => workshopName != name) : [...prev, name]
+    );
+  };
+
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('http://127.0.0.1:5000/api/add-completed-workshops', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ completedWorkshops: selectedWorkshops }),
+      });
+
+      if (response.ok) {
+        alert('Completed workshops added successfully!');
+        router.push('/goals');
+      } else {
+        throw new Error('Failed to submit workshops');
+      }
+    } catch (err) {
+      console.error('Error submitting workshops:', err);
+      alert('An error occurred while submitting the workshops');
+    }
+  };
+
+  //*WIP* for when user has not selected anything, a pop-up will show telling the user
+    //to select a workshop to continue *WIP*
+  // const popUp = () =>{
+  //
+  // }
+
   return (
     <div className={styles.pageContent}>
         <div className="container">
@@ -151,6 +220,13 @@ const SoftSkillsWorkshopsPage = () => {
                 <Link href="/recommended-workshops">
                     <button className="btn">Choose For Me</button>
                 </Link>
+                <button
+                className="btn"
+                onClick={handleSubmit}
+                disabled={selectedWorkshops.length == 0}
+                >
+                Next
+              </button>
             </div>
         </div>
     </div>
