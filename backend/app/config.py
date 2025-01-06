@@ -3,15 +3,6 @@ import os
 class Config:
     SQLALCHEMY_DATABASE_URI = os.getenv(
         'DATABASE_URL',
-        'postgresql://postgres:Panda@localhost:5432/biotrain-website'
+        'postgresql://rwc:changemeinprod@localhost:5436/biotrain'
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-
-
-
-
-
-
-
-
-

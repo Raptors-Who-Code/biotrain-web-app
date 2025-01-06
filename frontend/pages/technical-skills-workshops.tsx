@@ -15,36 +15,24 @@ const TechnicalSkillsWorkshopsPage: React.FC = () =>  {
     }
   const [workshops, setWorkshops] = useState<Workshop[]>([]);
   const [selectedWorkshops, setSelectedWorkshops] = useState<string[]>([]);
-  const [hasCompletedWorkshops, setHasCompletedWorkshops] = useState<boolean | null>(null);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   useEffect(() => {
-    if (hasCompletedWorkshops === true) {
-      const fetchWorkshops = async () => {
-        try {
-          const response = await fetch('http://127.0.0.1:5000/api/workshops');
-          const data = await response.json();
-          if (Array.isArray(data)) {
-              workshops.forEach((workshop) => {
-                  if(workshop.kind == "Industry skill")
-                      setWorkshops(data);
-              });
-          } else {
-            throw new Error('Invalid response format');
-          }
-        } catch (err) {
-          setError('Failed to load workshops');
-          console.error('Error fetching workshops:', err);
-        }
-      };
-      fetchWorkshops();
+    const fetchWorkshops = async () => {
+    try {
+        const response = await fetch('http://127.0.0.1:5000/api/workshops');
+        const data: Workshop[] = await response.json();
+        const industryWorkshops = data.filter(workshop => workshop.kind === "Industry");
+        setWorkshops(industryWorkshops);
+        console.log("HI");
+    } catch (err) {
+        setError('Failed to load workshops');
+        console.error('Error fetching workshops:', err);
     }
-
-    if (hasCompletedWorkshops === false) {
-      router.push('/goals');
-    }
-  }, [hasCompletedWorkshops, router]);
+    };
+    fetchWorkshops();
+  }, [router]);
 
   const handleButtonChange = (name: string) => {
     setSelectedWorkshops((prev) =>
@@ -54,15 +42,15 @@ const TechnicalSkillsWorkshopsPage: React.FC = () =>  {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/add-completed-workshops', {
+      const response = await fetch('http://127.0.0.1:5000/api/add-recommended-workshops', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ completedWorkshops: selectedWorkshops }),
+        body: JSON.stringify({ recommendedWorkshops: selectedWorkshops }),
       });
 
       if (response.ok) {
-        alert('Completed workshops added successfully!');
-        router.push('/goals');
+        alert('Workshops added successfully!');
+        router.push('/path');
       } else {
         throw new Error('Failed to submit workshops');
       }
@@ -103,7 +91,7 @@ const TechnicalSkillsWorkshopsPage: React.FC = () =>  {
                     {workshops.map((workshop)=> (
                         <label key = {workshop.name}>
                             <input
-                                type = "button"
+                                type = "checkbox"
                                 name = "workshop"
                                 value = {workshop.name}
                                 checked = {selectedWorkshops.includes(workshop.name)}
