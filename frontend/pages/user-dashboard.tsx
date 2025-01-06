@@ -1,15 +1,40 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { signOut } from 'firebase/auth';
-import { auth } from '../src/app/firebaseConfig';
-import Dash from './components/dash';
+import Link from 'next/link';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth } from "../src/app/firebaseConfig";
 import styles from './../styles/userDashboard.module.css';
 import AccountIcon from './components/AccountIcon';
+import Dash from './components/dash';
 
 const UserDashboard = () => {
-  const [showDecision, setShowDecision] = useState(false);
+  const [firstName, setFirstName] = useState<string | null>(null);
+  const [lastName, setLastName] = useState<string | null>(null);
+  const [email, setEmail] = useState<string | null>(null);
   const router = useRouter();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log('User is signed in:', user);
+        if (user.displayName) {
+          const [first, last] = user.displayName.split(' ');
+          setFirstName(first);
+          setLastName(last);
+        } else {
+          console.log('User display name is null or undefined');
+        }
+        setEmail(user.email);
+      } else {
+        console.log('No user is signed in');
+        setFirstName(null);
+        setLastName(null);
+        setEmail(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const userSignOut = async () => {
     try {
@@ -22,7 +47,6 @@ const UserDashboard = () => {
 
   return (
     <div className={styles.pageContainer}>
-
       <div className={styles.header}>
         <div className={styles.logo}>
           <Link href="/landing">
@@ -43,10 +67,8 @@ const UserDashboard = () => {
       </div>
 
       <div className={styles.pageContent}>
-        {/* dashboard component containing dashboard information */}
-        <Dash firstName={''} lastName={''} studentId={''} email={''} />
+        <Dash firstName={firstName} lastName={lastName} email={email} />
       </div>
-      
     </div>
   );
 };
