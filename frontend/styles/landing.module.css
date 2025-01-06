@@ -8,6 +8,13 @@
   font-family: Arial, sans-serif;
 }
 
+
+.accountSection {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
 /*  Card  */
 .cardcontainer {
     background-color: #D9D9D9;
@@ -163,6 +170,7 @@
 
 
 /*for dash component activity tracker*/
+/* Dash component and landing page share a CSS file*/
 .activityGrid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);

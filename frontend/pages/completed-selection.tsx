@@ -5,6 +5,7 @@ import Image from 'next/image';
 import '../styles/completedworkshops.css';
 import bioTrainLogo from '../public/biotrainlogo.png';
 import styles from './../styles/landing.module.css';
+import AccountIcon from './components/AccountIcon';
 
 const CompletedSelectionPage: React.FC = () => {
   return (
@@ -19,6 +20,12 @@ const CompletedSelectionPage: React.FC = () => {
             />
           </Link>
         </div>
+
+
+        <div style={{ position: 'absolute', top: '10px', right: '20px' }}>
+          <AccountIcon />
+        </div>
+
         <h1 className="header">Select the workshops you have completed</h1>
 
         <div className="checkbox-list">

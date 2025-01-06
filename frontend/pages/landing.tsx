@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import Link from 'next/link';
 import Grid from './components/grid';
 import styles from './../styles/landing.module.css';
+import AccountIcon from './components/AccountIcon';
 
 const LandingPage = () => {
   const [showDecision, setShowDecision] = useState(false);
@@ -16,6 +17,11 @@ const LandingPage = () => {
         {!showDecision ? (
           // Original content
           <div className={styles.pageContent}>
+
+                  <div className={styles.accountSection}>
+                   <AccountIcon />
+                 </div>
+                 
             <div className={styles.logo}>
               <Link href="/landing">
                 <img
@@ -24,6 +30,7 @@ const LandingPage = () => {
                   className={styles.logoImg}
                 />
               </Link>
+
             </div>
             <Grid />
             <div className={styles.buttonContainer}>

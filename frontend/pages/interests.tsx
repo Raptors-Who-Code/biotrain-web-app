@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import styles from './../styles/landing.module.css';
 import Link from 'next/link';
+import AccountIcon from './components/AccountIcon';
 
 const Interests = () => {
     const [interests, setInterests] = useState('');
@@ -36,6 +37,11 @@ const Interests = () => {
 
   return (
     <div className={styles.pageContent}>
+
+<div style={{ position: 'absolute', top: '20px', right: '20px' }}>
+          <AccountIcon />
+        </div>
+
       <div className={styles.page}>
         <div className={styles.logo}>
           <Link href="/landing">
