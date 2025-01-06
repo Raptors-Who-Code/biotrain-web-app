@@ -17,15 +17,18 @@ const RecommendedWorkshopsPage = () => {
         try {
             // Call to AI backend endpoint
             const response = await fetch('http://127.0.0.1:5000/api/generate-recommendations', {
-                method: 'GET',
+                method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ interests }),
+                body: JSON.stringify({ "content" : interests }),
             });
 
             if (!response.ok) throw new Error('Failed to fetch recommendations');
+            console.log(response.body);
 
             const data = await response.json();
-            setRecommendations(data.recommendations);
+            let recommended_workshops = [];
+            recommended_workshops = data.split(",");
+            setRecommendations(recommended_workshops);
         } catch (error) {
             console.log("Error fetching recommendations: ", error);
             setRecommendations([]);
