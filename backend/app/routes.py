@@ -204,9 +204,10 @@ def get_workshops():
         return jsonify([])
     
 
-@main.route('/api/generate-recommendations', methods=['GET'])
+@main.route('/api/generate-recommendations', methods=['POST'])
 async def get_recommendations():
     req = request.json
+    print(req)
     interests = req.get("content")
 
     # Organize workshops in dictionaries
@@ -288,7 +289,7 @@ async def get_recommendations():
     user.recommended_workshops = workshops
     db.session.commit()
 
-    return full_response
+    return jsonify(full_response)
 
 
 # endpoint for getting recommended workshops
