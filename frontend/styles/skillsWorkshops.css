@@ -1,3 +1,6 @@
+:root {
+    --x: 0;
+}
 .p1 {
     height: auto;
     width: 100%;
@@ -40,50 +43,46 @@ h2{
     box-sizing: border-box;
 }
 
-.boxBtn-container{
-    display: flex;
-    justify-content: center;
+.workshops-list{
+    display: grid;
     position: relative;
     top:50px;
-    gap:430px;
+    column-gap:20%;
+    row-gap:2%;
+    left:50px;
     font-family: "Poppins",sans-serif ;
+    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
 }
 
-.boxBtn1, .boxBtn2 {
+.boxBtn{
     background-color: #dcdada;
-    width: calc(50% - 20px);
+    flex-direction: column;
     max-width: 460px;
     min-width: 300px;
     height: auto;
     padding: 15px;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 
 }
 
-.boxBtn{
-    background-color: #dcdada;
-    max-width: 460px;
-    min-width: 300px;
-    height: auto;
-    padding: 15px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.boxBtn1 h2, .boxBtn2 h2 {
+.boxBtn h2 {
      text-align: center;
      color: #6B6B6B;
      font-size: 1.25rem;
 }
 
 .boxBtn:hover {
-    background-color: #3e1e5a;
+    background-color: #c6c5c5;
+}
+
+.boxBtn.clicked {
+
+    background-color: #aeabae;
+
 }
 
 .btn {
@@ -108,7 +107,7 @@ h2{
     justify-content: center;
     position: relative;
     top:75px;
-    gap:54%;
+    gap:49%;
 
 }
 

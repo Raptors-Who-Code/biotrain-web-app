@@ -18,6 +18,7 @@ const TechnicalSkillsWorkshopsPage: React.FC = () =>  {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
+
   useEffect(() => {
     const fetchWorkshops = async () => {
     try {
@@ -65,6 +66,8 @@ const TechnicalSkillsWorkshopsPage: React.FC = () =>  {
   // const popUp = () =>{
   //
   // }
+
+
   return (
     <div className={styles.pageContent}>
         <div className="container">
@@ -91,21 +94,16 @@ const TechnicalSkillsWorkshopsPage: React.FC = () =>  {
             ) : (
             <div className="workshops-list">
                 {workshops.map((workshop) => (
-                    <div key={workshop.name} className="boxBtn2">
-                        <label>
-                        <input
-                            type="checkbox"
+                    <button key={workshop.name}
+                            className={selectedWorkshops.includes(workshop.name) ? "boxBtn clicked" : "boxBtn"}
+                            type="button"
                             name="workshop"
                             value={workshop.name}
-                            checked={selectedWorkshops.includes(workshop.name)}
-                            onChange={() => handleButtonChange(workshop.name)}
-                        />
-                        <div className="workshop-details">
+                            onClick={() => handleButtonChange(workshop.name)}
+                    >
                             <h2>{workshop.name}</h2>
                             <p>{workshop.description}</p>
-                        </div>
-                        </label>
-                    </div>
+                    </button>
                 ))}
             </div>
             )}
