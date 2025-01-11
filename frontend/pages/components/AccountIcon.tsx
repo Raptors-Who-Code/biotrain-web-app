@@ -17,10 +17,10 @@ const AccountIcon = () => {
         if (user.displayName) {
           setUserName(user.displayName);
         } else {
-          console.log('User display name is null or undefined');//check console log to degug
+          console.log('User display name is null or undefined');
         }
       } else {
-        console.log('No user is signed in'); // Check console log to debug
+        console.log('No user is signed in');
         setUserName(null);
       }
     });
@@ -34,12 +34,17 @@ const AccountIcon = () => {
     }
   };
 
+  if (!userName) {
+    return null; // Do not render the component if no user is signed in
+  }
+
   return (
     <div className={styles.accountIconContainer} onClick={IconClick}>
-      <a href={userName ? "/user-dashboard" : "#"}>
+      <a href={userName ? "/dashboard" : "#"}>
         <img
           className={styles.accountIcon}
           src="/UserIcon.png"
+          style={{ width: '50px'}}
         />
       </a>
       {userName && <p className={styles.userName}>{userName}</p>}
@@ -48,3 +53,5 @@ const AccountIcon = () => {
 };
 
 export default AccountIcon;
+
+

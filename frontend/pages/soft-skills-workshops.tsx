@@ -5,6 +5,7 @@ import bioTrainLogo from '../public/biotrainlogo.png';
 import Link from 'next/link';
 import styles from './../styles/landing.module.css';
 import {useRouter} from "next/router";
+import AccountIcon from './components/AccountIcon';
 
 const SoftSkillsWorkshopsPage: React.FC = () => {
 
@@ -69,6 +70,9 @@ const SoftSkillsWorkshopsPage: React.FC = () => {
 
   return (
     <div className={styles.pageContent}>
+        <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
+          <AccountIcon />
+        </div>
         <div className="container">
             <div className={styles.logo}>
                 <Link href="/landing">
