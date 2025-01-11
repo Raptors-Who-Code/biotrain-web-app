@@ -4,10 +4,15 @@ import Image from 'next/image';
 import bioTrainLogo from '../public/biotrainlogo.png';
 import Link from 'next/link';
 import styles from './../styles/landing.module.css';
+import AccountIcon from './components/AccountIcon';
 
 const GoalsPage = () => {
   return (
     <div className={styles.pageContent}>
+      <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
+          <AccountIcon />
+      </div>
+
       <div className="container">
           <div className={styles.logo}>
             <Link href="/landing">

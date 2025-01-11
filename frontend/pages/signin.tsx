@@ -15,7 +15,7 @@ const SignInPage = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-     router.push("/user-dashboard");//redriection upon successful login
+     router.push("/dashboard");//redriection upon successful login
     } catch (error) {
       setError((error as any).message);
     }

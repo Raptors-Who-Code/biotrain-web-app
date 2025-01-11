@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import '../styles/completedWorkshopsPage.css';
 import styles from './../styles/landing.module.css';
+import AccountIcon from './components/AccountIcon';
 
 interface Workshop {
   name: string;
@@ -81,6 +82,10 @@ const CompletedWorkshopsPage: React.FC = () => {
           </Link>
         </div>
 
+        <div style={{ position: 'absolute', top: '10px', right: '20px' }}>
+          <AccountIcon />
+        </div>
+        
         {hasCompletedWorkshops === null && (
           <>
             <h1 className="header">Have you completed any workshops with BioTrain?</h1>

@@ -1,14 +1,35 @@
-import React, { Fragment } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import styles from '../../styles/landing.module.css';
 
-interface UserInfo {
-  firstName: string;
-  lastName: string;
-  studentId: string;
-  email: string;
+interface DashProps {
+  firstName: string | null;
+  lastName: string | null;
+  email: string | null;
 }
 
-function Dash({ firstName, lastName, studentId, email }: UserInfo) {
+const Dash: React.FC<DashProps> = ({ firstName, lastName, email }) => {
+  const [activity, setActivity] = useState<string[]>([]);
+
+  useEffect(() => {
+    // Simulate fetching activity data from a database
+    const fetchActivity = () => {
+      const storedActivity = JSON.parse(localStorage.getItem('activity') || '[]');
+      setActivity(storedActivity);
+    };
+
+    fetchActivity();
+  }, []);
+
+  useEffect(() => {
+    if (email) {
+      // Update activity data when user logs in
+      const today = new Date().toISOString().split('T')[0];
+      const updatedActivity = [...activity, today];
+      setActivity(updatedActivity);
+      localStorage.setItem('activity', JSON.stringify(updatedActivity));
+    }
+  }, [email]);
+
   return (
     <Fragment>
       <div className={styles.cardcontainer}>
@@ -17,8 +38,6 @@ function Dash({ firstName, lastName, studentId, email }: UserInfo) {
           <strong>First Name:</strong> {firstName}
           <br />
           <strong>Last Name:</strong> {lastName}
-          <br />
-          <strong>Student ID:</strong> {studentId}
           <br />
           <strong>Email:</strong> {email}
         </p>
@@ -42,18 +61,19 @@ function Dash({ firstName, lastName, studentId, email }: UserInfo) {
         </div>
 
         <div className={styles.cardcontainer}>
-          <h1 className={styles.cardHeader}>Activity History</h1>
-          <p className={styles.cardBody}>
-            Placeholder for activity history...
-          </p>
-          <ul className={styles.cardBody}>
-            <li>*GitHub-like activity tracker*</li>
-            
-          </ul>
+          <h1 className={styles.cardHeader}>Activity Tracker</h1>
+          <div className={styles.activityGrid}>
+            {activity.map((date, index) => (
+              <div key={index} className={styles.activityCell}>
+                {date}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </Fragment>
   );
-}
+};
 
 export default Dash;
+
