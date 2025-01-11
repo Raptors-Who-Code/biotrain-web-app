@@ -1,5 +1,6 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, Flask
 from .models import User, Workshop, db
+from flask_cors import CORS
 import asyncio
 from ollama import AsyncClient
 
@@ -90,7 +91,6 @@ def add_completed_workshops():
     }), 201
 
 # Route for future implementation of adding recommended workshops
-"""
 @main.route('/api/add-recommended-workshops', methods=['POST'])
 def add_recommended_workshops():
     data = request.json
@@ -118,7 +118,6 @@ def add_recommended_workshops():
             "recommended_workshops": user.recommended_workshops
         }
     }), 201
-"""
 
 # endpoint for adding new workshops
 @main.route('/api/add-workshops', methods=['POST'])
@@ -204,10 +203,9 @@ def get_workshops():
         return jsonify([])
     
 
-@main.route('/api/generate-recommendations', methods=['POST'])
+@main.route('/api/generate-recommendations', methods=['GET'])
 async def get_recommendations():
     req = request.json
-    print(req)
     interests = req.get("content")
 
     # Organize workshops in dictionaries
@@ -289,7 +287,7 @@ async def get_recommendations():
     user.recommended_workshops = workshops
     db.session.commit()
 
-    return jsonify(full_response)
+    return full_response
 
 
 # endpoint for getting recommended workshops
