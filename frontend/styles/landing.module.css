@@ -4,8 +4,12 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #f9f9f9;
   font-family: Arial, sans-serif;
+
+  background:
+  linear-gradient( rgba(183, 90, 217, 0.6) -18.1%, rgba(134, 130, 224, 0.7) 37.07%, rgba(206, 166, 240, 0.7) 78.83%, rgba(182, 93, 214, 0.6) 119.47%),
+  radial-gradient(31.3% 50% at 50% 50%, rgba(201, 164, 234, 0.3) 0%, rgba(188, 182, 237, 0.3) 100%),
+  linear-gradient( rgba(194, 166, 234, 0) 9.24%, rgba(194, 166, 234, 0.75) 91.45%);
 }
 
 /*  Card  */

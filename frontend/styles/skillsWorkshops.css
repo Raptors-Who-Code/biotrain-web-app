@@ -1,12 +1,3 @@
-:root {
-    --x: 0;
-}
-.p1 {
-    height: auto;
-    width: 100%;
-    font-size: 1rem;
-    word-wrap: break-word;
-}
 
 h2{
     color: #6B6B6B;
@@ -18,9 +9,8 @@ h2{
     justify-content: center;
     align-items: center;
     margin: auto;
-    color: #6B6B6B;
     font-family: "Poppins", sans-serif;
-    background-color: #dcdada;
+    background-color: white;
     width: 100%;
     max-width: 1413px;
     height: 151px;
@@ -30,12 +20,10 @@ h2{
 
 .body{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align:center;
     margin: auto;
-    color: #6B6B6B;
     font-family: "Poppins", sans-serif;
-    background-color: #dcdada;
+    background-color: white;
     width: 100%;
     max-width: 1413px;
     height: 100px;
@@ -45,35 +33,67 @@ h2{
 
 .workshops-list{
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     position: relative;
     top:50px;
     column-gap:20%;
     row-gap:2%;
     left:50px;
     font-family: "Poppins",sans-serif ;
-    flex-direction: column;
-    grid-template-columns: repeat(2, 1fr);
 }
 
-.boxBtn{
-    background-color: #dcdada;
-    flex-direction: column;
-    max-width: 460px;
-    min-width: 300px;
+.workshopCheckbox{
+    background-color: black;
+    border-radius: 10px;
+    width:392px;
     height: auto;
     padding: 15px;
-    box-sizing: border-box;
+    gap: 10px;
+    display:flow;
+    flex-direction:column;
+}
+
+.workshopCheckbox .header-row {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
+}
+
+input[type="checkbox"]{
+    width: 32px;
+    height: 32px;
+    background-color:white;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    border:4px solid gray;
+
+
+}
+input[type="checkbox"]:hover{
+    border-color: #cfcece;
+}
+
+input[type="checkbox"]:checked{
+    background-color: black;
+}
+
+.workshopCheckbox h2{
+    text-align: left;
+    color: white;
+    font-size: 1.25rem;
 
 }
 
-.boxBtn h2 {
-     text-align: center;
-     color: #6B6B6B;
-     font-size: 1.25rem;
+.workshopCheckbox p{
+    color:white;
+    text-align: left;
+    height: auto;
+    font-size: 1rem;
+
 }
+
+
+
 
 .boxBtn:hover {
     background-color: #c6c5c5;
@@ -88,7 +108,7 @@ h2{
 .btn {
     width: 149px;
     height: 53px;
-    background: #51237F;
+    background: black;
     font-family: "Poppins", sans-serif;
     color: white;
     font-size: 20px;
@@ -107,7 +127,7 @@ h2{
     justify-content: center;
     position: relative;
     top:75px;
-    gap:49%;
+    gap:20%;
 
 }
 
@@ -147,7 +167,7 @@ h2{
 .btn-ai {
     width: 210px;
     height: 60px;
-    background: #51237F;
+    background: black;
     font-family: "Poppins", sans-serif;
     color: white;
     font-size: 20px;

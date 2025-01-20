@@ -35,7 +35,7 @@ const TechnicalSkillsWorkshopsPage: React.FC = () =>  {
     fetchWorkshops();
   }, []);
 
-  const handleButtonChange = (name: string) => {
+  const handleCheckboxChange = (name: string) => {
     setSelectedWorkshops((prev) =>
       prev.includes(name) ? prev.filter((workshopName) => workshopName != name) : [...prev, name]
     );
@@ -98,21 +98,31 @@ const TechnicalSkillsWorkshopsPage: React.FC = () =>  {
             ) : (
             <div className="workshops-list">
                 {workshops.map((workshop) => (
-                    <button key={workshop.name}
-                            className={selectedWorkshops.includes(workshop.name) ? "boxBtn clicked" : "boxBtn"}
-                            type="button"
-                            name="workshop"
+                <label key={workshop.name}
+                       className = "workshopCheckbox"
+                >
+                    <div className="header-row">
+                        <h2>{workshop.name}</h2>
+                        <input
+                            type="checkbox"
+                            name="workshops"
                             value={workshop.name}
-                            onClick={() => handleButtonChange(workshop.name)}
-                    >
-                            <h2>{workshop.name}</h2>
-                            <p>{workshop.description}</p>
-                    </button>
-                ))}
+                            checked={selectedWorkshops.includes(workshop.name)}
+                            onChange={() => handleCheckboxChange(workshop.name)}
+                        />
+
+                    </div>
+                    <p>{workshop.description}</p>
+
+                </label>
+              ))}
             </div>
-            )}
+             )}
 
             <div className="button-container">
+                <Link href="/goals">
+                    <button className = "btn">Back</button>
+                </Link>
                 <Link href="/recommended-workshops">
                     <button className="btn">Choose For Me</button>
                 </Link>
@@ -124,6 +134,7 @@ const TechnicalSkillsWorkshopsPage: React.FC = () =>  {
                     Next
                 </button>
             </div>
+
         </div>
     </div>
   );

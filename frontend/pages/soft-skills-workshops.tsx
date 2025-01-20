@@ -35,7 +35,7 @@ const SoftSkillsWorkshopsPage: React.FC = () => {
     fetchWorkshops();
   }, []);
 
-  const handleButtonChange = (name: string) => {
+  const handleCheckboxChange = (name: string) => {
     setSelectedWorkshops((prev) =>
       prev.includes(name) ? prev.filter((workshopName) => workshopName != name) : [...prev, name]
     );
@@ -87,28 +87,36 @@ const SoftSkillsWorkshopsPage: React.FC = () => {
             <h2 className="body"> These short (2.5 hour) workshops are designed to provide foundational skills to
                 incumbent workers in biotechnology.
                 They are prepared with biotechnology guidance and are taught by industry experts. </h2>
-
             {error ? (
                 <p className="error">{error}</p>
-            ) : (
-            <div className="workshops-list">
-                {workshops.map((workshop) => (
-                    <button key={workshop.name}
-                            className={selectedWorkshops.includes(workshop.name) ? "boxBtn clicked" : "boxBtn"}
-                            type="button"
-                            name="workshop"
-                            value={workshop.name}
-                            onClick={() => handleButtonChange(workshop.name)}
+                ) : (
+                <div className="workshops-list">
+                 {workshops.map((workshop) => (
+                    <label key={workshop.name}
+                       className = "workshopCheckbox"
                     >
+                    <div className="header-row">
                         <h2>{workshop.name}</h2>
+                        <input
+                            type="checkbox"
+                            name="workshops"
+                            value={workshop.name}
+                            checked={selectedWorkshops.includes(workshop.name)}
+                            onChange={() => handleCheckboxChange(workshop.name)}
+                        />
+
+                    </div>
                         <p>{workshop.description}</p>
-                    </button>
-                ))}
-            </div>
-            )}
+                    </label>
+                        ))}
+                    </div>
+                    )}
 
 
             <div className="button-container">
+                <Link href="/goals">
+                    <button className = "btn">Back</button>
+                </Link>
                 <Link href="/recommended-workshops">
                     <button className="btn">Choose For Me</button>
                 </Link>

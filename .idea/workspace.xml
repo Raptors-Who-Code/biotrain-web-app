@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d2ee9c57-cae9-4ebd-9d4e-c44250674f06" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/soft-skills-workshops.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/soft-skills-workshops.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/technical-skills-workshops.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/technical-skills-workshops.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styles/landing.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/styles/landing.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styles/skillsWorkshops.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/styles/skillsWorkshops.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="workshops-pages" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Dmonoloco&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Raptors-Who-Code/biotrain-web-app.git&quot;,
+    &quot;accountId&quot;: &quot;75942086-c83d-4200-b4c8-3fbc698fc080&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2oaalcRfW9EiYPKxmf7NvC4tQhd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.models.executor&quot;: &quot;Run&quot;,
+    &quot;Python.routes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev/Diego&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Diego/PycharmProjects/biotrain-web-app/frontend/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Diego\\PycharmProjects\\biotrain-web-app\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Diego\PycharmProjects\biotrain-web-app\frontend\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Diego\PycharmProjects\biotrain-web-app\frontend\styles" />
+      <recent name="C:\Users\Diego\PycharmProjects\biotrain-web-app\frontend\pages" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="docs" factoryName="Sphinx task">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PY-242.21829.153" />
+        <option value="bundled-python-sdk-464836ebc622-b74155a9e76b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.21829.153" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d2ee9c57-cae9-4ebd-9d4e-c44250674f06" name="Changes" comment="" />
+      <created>1731110292939</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731110292939</updated>
+      <workItem from="1731110294096" duration="3227000" />
+      <workItem from="1731118980540" duration="2584000" />
+      <workItem from="1731166310634" duration="1463000" />
+      <workItem from="1731178914843" duration="3094000" />
+      <workItem from="1731200723097" duration="805000" />
+      <workItem from="1731201700769" duration="5491000" />
+      <workItem from="1731270963234" duration="1675000" />
+      <workItem from="1731366726671" duration="6190000" />
+      <workItem from="1731523821118" duration="1707000" />
+      <workItem from="1731527000383" duration="1551000" />
+      <workItem from="1731538530855" duration="4757000" />
+      <workItem from="1731604181160" duration="3011000" />
+      <workItem from="1731617219035" duration="1299000" />
+      <workItem from="1731697149014" duration="3963000" />
+      <workItem from="1731864755721" duration="1662000" />
+      <workItem from="1732318481987" duration="1524000" />
+      <workItem from="1732497307908" duration="4868000" />
+      <workItem from="1732582870161" duration="4706000" />
+      <workItem from="1732919536826" duration="6379000" />
+      <workItem from="1733001934145" duration="1548000" />
+      <workItem from="1733108230581" duration="1371000" />
+      <workItem from="1733191928331" duration="3690000" />
+      <workItem from="1733255128631" duration="1409000" />
+      <workItem from="1733331391182" duration="2906000" />
+      <workItem from="1733335998934" duration="227000" />
+      <workItem from="1733368726331" duration="1524000" />
+      <workItem from="1733424245551" duration="2639000" />
+      <workItem from="1733543499421" duration="4688000" />
+      <workItem from="1733705841371" duration="1954000" />
+      <workItem from="1733707844768" duration="2102000" />
+      <workItem from="1733767085374" duration="864000" />
+      <workItem from="1733877960935" duration="1024000" />
+      <workItem from="1733950863851" duration="1115000" />
+      <workItem from="1734065410335" duration="845000" />
+      <workItem from="1734644884559" duration="1610000" />
+      <workItem from="1734822730674" duration="1951000" />
+      <workItem from="1735170538469" duration="2127000" />
+      <workItem from="1735319649530" duration="10458000" />
+      <workItem from="1735493349330" duration="1322000" />
+      <workItem from="1735772570882" duration="1824000" />
+      <workItem from="1736133862562" duration="5731000" />
+      <workItem from="1736175001687" duration="9329000" />
+      <workItem from="1736185143767" duration="527000" />
+      <workItem from="1736186425295" duration="4598000" />
+      <workItem from="1736299436799" duration="4289000" />
+      <workItem from="1736310290166" duration="15000" />
+      <workItem from="1736364949203" duration="5766000" />
+      <workItem from="1736376885724" duration="6969000" />
+      <workItem from="1736540211906" duration="7089000" />
+      <workItem from="1736547538453" duration="59000" />
+      <workItem from="1736550560948" duration="4903000" />
+      <workItem from="1736649702062" duration="3800000" />
+      <workItem from="1736724482527" duration="1119000" />
+      <workItem from="1736983791715" duration="6918000" />
+      <workItem from="1737059522863" duration="2334000" />
+      <workItem from="1737144267853" duration="10601000" />
+      <workItem from="1737332869622" duration="116000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/biotrain_web_app$routes.coverage" NAME="routes Coverage Results" MODIFIED="1733707354771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/app" />
+    <SUITE FILE_PATH="coverage/biotrain_web_app$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1736133952992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/app" />
+    <SUITE FILE_PATH="coverage/biotrain_web_app$run.coverage" NAME="run Coverage Results" MODIFIED="1736134041139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/biotrain_web_app$models.coverage" NAME="models Coverage Results" MODIFIED="1733706647741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/app" />
+  </component>
+</project>
